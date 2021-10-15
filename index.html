@@ -12,17 +12,17 @@
     <img src="./img/logo.png" class="logo" alt="ロゴ">
     <div class="hamburger_menu">
       <input type="checkbox" id="menu_btn_check">
-      <label for="menu_btn_check" class="menu_btn"><span></span></label>
-      <div class="menu_content">
+      <label for="menu_btn_check" id="menu_btn" class="menu_btn"><span></span></label>
+      <div id="menu_content" class="menu_content">
         <ul>
           <li>
-            <a href="#">記事一覧</a>
+            <a href="#article_list">記事一覧</a>
           </li>
           <li>
-            <a href="#">人気の記事</a>
+            <a href="#popular_article">人気の記事</a>
           </li>
           <li>
-            <a href="#">共有</a>
+            <a href="#sns_share">共有</a>
           </li>
         </ul>
       </div>
@@ -38,7 +38,7 @@
     </div>
   </div><!-- Head -->
   <div class="partition_line"></div>
-  <div class="wrapper">
+  <div id="article_list" class="wrapper">
     <h2 class="head_line">記事一覧</h2>
     <div class="carousel">
       <ul class="carousel_area">
@@ -128,7 +128,7 @@
     </div>
     <button class="carousel_view_all">すべて見る</button>
   </div><!-- article_list -->
-  <div class="wrapper">
+  <div id="popular_article" class="wrapper">
     <h2 class="head_line">人気の記事</h2>
     <div class="popular_article">
       <div class="article_list">
@@ -155,7 +155,7 @@
       </div>
     </div>
   </div>
-  <div class="wrapper">
+  <div id="sns_share" class="wrapper">
     <div class="sns_share">
       <div class="frase">このページを共有する</div>
       <div class="sns_button_group">
