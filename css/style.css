@@ -145,7 +145,8 @@
 
 .wrapper .head .search_field {
   width: 320px;
-  height: 40px;
+  /* height: 40px; */
+  padding: 5px;
   color: #293F65;
   margin: auto;
   /* text-align: center; */
@@ -154,8 +155,9 @@
 }
 
 .wrapper .head .search_button {
-  width: 70px;
-  height: 40px;
+  /* width: 70px;
+  height: 40px; */
+  padding: 5px 20px;
   background-color: #2b5eb6;
   color: #ffffff;
   margin: auto;
@@ -198,7 +200,7 @@
 .wrapper .carousel .carousel_area .carousel_list {
   width: 470px;
   height: 300px;
-  margin-right: 70px;
+  margin-right: 30px;
   /* border: 1px solid #000000; */
 }
 
@@ -516,7 +518,7 @@
 }
 
 .wrapper .bottom_menu .account .official_twitter {
-  /* width: 200px; */
+  width: 200px;
   height: 60px;
   background: #3a7beb;
   font-size: 22px;
@@ -529,7 +531,7 @@
 }
 
 .wrapper .bottom_menu .account .official_facebook {
-  /* width: 200px; */
+  width: 200px;
   height: 60px;
   background: #14418f;
   font-size: 22px;
@@ -596,6 +598,17 @@
     margin-right: 50px;
     background-color: #2b5eb6;
     color: #ffffff;
+  }
+
+  .wrapper .bottom_menu .account .official_twitter {
+    width: 120px;
+    font-size: 16px;
+    margin-right: 0;
+  }
+
+  .wrapper .bottom_menu .account .official_facebook {
+    width: 120px;
+    font-size: 16px;
   }
 
   .wrapper .footer {

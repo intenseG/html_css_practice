@@ -9,20 +9,20 @@
 </head>
 <body>
   <div id="header" class="header">
-    <img src="./img/logo.png" class="logo" alt="ロゴ">
+    <img src="./img/logo.png" class="logo" alt="囲碁ニュース">
     <div class="hamburger_menu">
       <input type="checkbox" id="menu_btn_check">
       <label for="menu_btn_check" id="menu_btn" class="menu_btn"><span></span></label>
       <div id="menu_content" class="menu_content">
         <ul>
           <li>
-            <a href="#article_list">記事一覧</a>
+            <a href="javascript:clickLink('article_list')">記事一覧</a>
           </li>
           <li>
-            <a href="#popular_article">人気の記事</a>
+            <a href="javascript:clickLink('popular_article')">人気の記事</a>
           </li>
           <li>
-            <a href="#sns_share">共有</a>
+            <a href="javascript:clickLink('sns_share')">共有</a>
           </li>
         </ul>
       </div>
@@ -41,7 +41,7 @@
   <div id="article_list" class="wrapper">
     <h2 class="head_line">記事一覧</h2>
     <div class="carousel">
-      <ul class="carousel_area">
+      <ul id="carousel_area" class="carousel_area">
         <li class="carousel_list">
           <div class="article_item">
             <div class="img_box">
@@ -119,10 +119,10 @@
       </ul>
       <div class="arrow_wrap">
         <div class="arrow_left">
-          <button class="arrow_btn" type="button"></button>
+          <button id="arrow_left" class="arrow_btn" type="button"></button>
         </div>
         <div class="arrow_right">
-          <button class="arrow_btn" type="button"></button>
+          <button id="arrow_right" class="arrow_btn" type="button"></button>
         </div>
       </div>
     </div>
