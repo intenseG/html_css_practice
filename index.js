@@ -2,16 +2,24 @@ let headerElm = document.getElementById("header");
 let menuBtnElm = document.getElementById("menu_btn");
 let menuContentElm = document.getElementById("menu_content");
 
+let scrollFlag = true;
+
 function changeHeaderColor() {
+    if (!scrollFlag) return;
     if (headerElm.scrollHeight < window.scrollY) {
         headerElm.classList.add("change_color");
         menuBtnElm.classList.add("change_color");
         menuContentElm.classList.add("change_color");
     } else {
+        scrollFlag = false;
         headerElm.classList.remove("change_color");
         menuBtnElm.classList.remove("change_color");
         menuContentElm.classList.remove("change_color");
     }
+
+    setTimeout(() => {
+        scrollFlag = true;
+    }, 200);
 }
 
 window.addEventListener("scroll", changeHeaderColor);
@@ -47,54 +55,64 @@ class Carousel {
         this.margin = 30;
         this.slideCurrentNum = 0;
         this.totalSlideNum = this.carouselListElms.length - 1;
+        this.carouselBtnPrev = document.getElementById('arrow_left');
+        this.carouselBtnNext = document.getElementById('arrow_right');
     }
 
     calcWidth() {
-        const slideArea = this.width * this.length + this.margin * (this.length - 1);
-        this.carouselAreaElm.style.width = slideArea;
+        return this.width * this.length + this.margin * (this.length - 1);
+    }
+
+    calcLeft() {
+        return this.slideCurrentNum * -this.width - this.margin * this.slideCurrentNum;
+    }
+
+    updateWidth() {
+        this.carouselAreaElm.style.width = this.calcWidth();
     }
 
     changeSlide() {
-        this.carouselAreaElm.style.left = this.slideCurrentNum * -this.width - this.margin * this.slideCurrentNum + "px";
+        this.carouselAreaElm.style.left = this.calcLeft() + "px";
     }
 
-    previousCarouselItem() {
+    prevItem() {
         console.log("slideCurrentNum: " + this.slideCurrentNum);
         if (this.slideCurrentNum === 0) {
             // slideCurrentNum = totalSlideNum;
-            carouselBtnLeft.disabled = true;
+            this.carouselBtnPrev.disabled = true;
         } else {
             this.slideCurrentNum--;
-            carouselBtnLeft.disabled = false;
-            carouselBtnRight.disabled = false;
+            this.carouselBtnPrev.disabled = false;
+            this.carouselBtnNext.disabled = false;
         }
 
         this.changeSlide();
     }
 
-    nextCarouselItem() {
+    nextItem() {
         console.log("slideCurrentNum: " + this.slideCurrentNum);
         if (this.slideCurrentNum === this.totalSlideNum) {
             // slideCurrentNum = 0;
-            carouselBtnRight.disabled = true;
+            this.carouselBtnNext.disabled = true;
         } else {
             this.slideCurrentNum++;
-            carouselBtnRight.disabled = false;
-            carouselBtnLeft.disabled = false;
+            this.carouselBtnNext.disabled = false;
+            this.carouselBtnPrev.disabled = false;
         }
 
         this.changeSlide();
+    }
+
+    handleListener() {
+        this.carouselBtnPrev.addEventListener("click", () => {
+            this.prevItem();
+        });
+        this.carouselBtnNext.addEventListener("click", () => {
+            this.nextItem();
+        });
     }
 }
 
 const carousel = new Carousel();
 carousel.calcWidth();
-
-const carouselBtnLeft = document.getElementById('arrow_left');
-const carouselBtnRight = document.getElementById('arrow_right');
-carouselBtnLeft.addEventListener("click", function() {
-    carousel.previousCarouselItem();
-});
-carouselBtnRight.addEventListener("click", function() {
-    carousel.nextCarouselItem();
-});
+carousel.handleListener();
