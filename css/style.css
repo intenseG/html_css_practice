@@ -97,6 +97,7 @@
   list-style: none;
 }
 .menu_content ul li a {
+  cursor: pointer;
   display: block;
   /* width: 100%; */
   font-size: 15px;
