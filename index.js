@@ -47,16 +47,17 @@ linkSnsShareElm.addEventListener("click", function() {
 });
 
 class Carousel {
-    constructor() {
-        this.carouselListElms = document.getElementsByClassName('carousel_list');
-        this.carouselAreaElm = document.getElementById('carousel_area');
+    constructor(parentElm) {
+        this.carouselParentRect = parentElm.getBoundingClientRect();
+        this.carouselListElms = parentElm.querySelectorAll('.carousel_list');
+        this.carouselAreaElm = parentElm.querySelector('.carousel_area');
         this.width = this.carouselListElms[0].clientWidth;
         this.length = this.carouselListElms.length;
         this.margin = 30;
         this.slideCurrentNum = 0;
         this.totalSlideNum = this.carouselListElms.length - 1;
-        this.carouselBtnPrev = document.getElementById('arrow_left');
-        this.carouselBtnNext = document.getElementById('arrow_right');
+        this.carouselBtnPrev = parentElm.querySelector('.arrow_left');
+        this.carouselBtnNext = parentElm.querySelector('.arrow_right');
     }
 
     calcWidth() {
@@ -64,7 +65,7 @@ class Carousel {
     }
 
     calcLeft() {
-        return this.slideCurrentNum * -this.width - this.margin * this.slideCurrentNum;
+        return ((this.slideCurrentNum + 1) * -this.width) - (this.margin * (this.slideCurrentNum + 1)) + (this.carouselParentRect.width / 2 + this.width / 2);
     }
 
     updateWidth() {
@@ -113,6 +114,8 @@ class Carousel {
     }
 }
 
-const carousel = new Carousel();
+const parentElm = document.getElementById("carousel");
+const carousel = new Carousel(parentElm);
 carousel.calcWidth();
+carousel.changeSlide();
 carousel.handleListener();
