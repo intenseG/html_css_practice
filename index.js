@@ -22,7 +22,38 @@ function changeHeaderColor() {
     }, 200);
 }
 
-window.addEventListener("scroll", changeHeaderColor);
+let backToTopBtnElm = document.querySelector(".back_to_topbtn");
+
+function backToTop() {
+    window.scrollTo({
+       top: 0,
+       behavior: "smooth" 
+    });
+}
+
+backToTopBtnElm.addEventListener("click", backToTop);
+
+let topBtnFlag = true;
+let topBtnThreshold = 500;
+
+function toggleTopBtn() {
+    if (!topBtnFlag) return;
+    if (topBtnThreshold < window.scrollY) {
+        backToTopBtnElm.classList.add("display_on");
+    } else {
+        topBtnFlag = false;
+        backToTopBtnElm.classList.remove("display_on");
+    }
+
+    setTimeout(() => {
+        topBtnFlag = true;
+    }, 200);
+}
+
+window.addEventListener("scroll", () => {
+    changeHeaderColor();
+    toggleTopBtn();
+});
 
 let linkArticleListElm = document.getElementById('link_article_list');
 let linkPopularArticleElm = document.getElementById('link_popular_article');
