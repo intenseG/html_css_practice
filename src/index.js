@@ -87,8 +87,8 @@ class Carousel {
         this.margin = 30;
         this.slideCurrentNum = 0;
         this.totalSlideNum = this.carouselListElms.length - 1;
-        this.carouselBtnPrev = parentElm.querySelector('.arrow_left');
-        this.carouselBtnNext = parentElm.querySelector('.arrow_right');
+        this.carouselBtnPrev = parentElm.querySelector('.arrow_prev');
+        this.carouselBtnNext = parentElm.querySelector('.arrow_next');
     }
 
     calcWidth() {
@@ -145,7 +145,7 @@ class Carousel {
     }
 }
 
-const parentElm = document.getElementById("carousel");
+const parentElm = document.getElementById("article_list-carousel");
 const carousel = new Carousel(parentElm);
 carousel.calcWidth();
 carousel.changeSlide();

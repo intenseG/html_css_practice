@@ -10,8 +10,8 @@
 <body>
   <button class="back_to_topbtn"></button>
   <div id="header" class="header">
-    <img src="./img/logo.png" class="logo" alt="囲碁ニュース">
-    <div class="hamburger_menu">
+    <img src="./img/logo.png" class="header-logo" alt="囲碁ニュース">
+    <div class="header-menu">
       <input type="checkbox" id="menu_btn_check">
       <label for="menu_btn_check" id="menu_btn" class="menu_btn"><span></span></label>
       <div id="menu_content" class="menu_content">
@@ -30,18 +30,18 @@
     </div>
   </div><!-- Header -->
   <div class="wrapper">
-    <div class="head">
-      <div class="frase">
+    <div class="main_visual">
+      <div class="main_visual-frase">
         囲碁に関する情報やニュースを掲載しています
       </div>
-      <input type="text" class="search_field">
-      <button class="search_button">検索</button>
+      <input type="text" class="main_visual-search_field">
+      <button class="main_visual-search_button">検索</button>
     </div>
-  </div><!-- Head -->
+  </div><!-- MainVisual -->
   <div class="partition_line"></div>
   <div id="article_list" class="wrapper">
     <h2 class="head_line">記事一覧</h2>
-    <div id="carousel" class="carousel">
+    <div id="article_list-carousel" class="article_list-carousel">
       <ul id="carousel_area" class="carousel_area">
         <li class="carousel_list">
           <div class="article_item">
@@ -118,16 +118,16 @@
           <div class="title">囲碁の極意9</div>
         </li>
       </ul>
-      <div class="arrow_wrap">
-        <div class="arrow_left">
-          <button id="arrow_left" class="arrow_btn" type="button"></button>
+      <div class="article_list-arrow_wrap">
+        <div class="arrow_prev">
+          <button id="arrow_prev" class="arrow_btn" type="button"></button>
         </div>
-        <div class="arrow_right">
-          <button id="arrow_right" class="arrow_btn" type="button"></button>
+        <div class="arrow_next">
+          <button id="arrow_next" class="arrow_btn" type="button"></button>
         </div>
       </div>
     </div>
-    <button class="carousel_view_all">すべて見る</button>
+    <button class="article_list-carousel_view_all">すべて見る</button>
   </div><!-- article_list -->
   <div id="popular_article" class="wrapper">
     <h2 class="head_line">人気の記事</h2>
@@ -158,8 +158,8 @@
   </div>
   <div id="sns_share" class="wrapper">
     <div class="sns_share">
-      <div class="frase">このページを共有する</div>
-      <div class="sns_button_group">
+      <div class="sns_share-frase">このページを共有する</div>
+      <div class="sns_share-button_group">
         <button class="sns_button">Twitter</button>
         <button class="sns_button">LINE</button>
         <button class="sns_button">Facebook</button>
@@ -169,7 +169,7 @@
   <div class="partition_line"></div>
   <div class="wrapper">
     <div class="bottom_menu">
-      <div class="article_category">
+      <div class="bottom_menu-article_category">
         <h2 class="head_line article_category_title">記事カテゴリ一覧</h2>
         <div class="category_list">
           <button class="category_item">カテゴリ1</button>
@@ -178,7 +178,7 @@
           <button class="category_item">カテゴリ4</button>
         </div>
       </div>
-      <div class="account">
+      <div class="bottom_menu-account">
         <div class="head_line account_title">アカウント</div>
         <div class="sns_group">
           <button class="official_twitter">Twitter</button>
@@ -192,6 +192,6 @@
       Copyright © 2021 IgoCreative All Rights Reserved.
     </div>
   </div>
-  <script src="./index.js"></script>
+  <script src="./bundle.js"></script>
 </body>
 </html>
