@@ -1,6 +1,6 @@
-let headerElm = document.getElementById("header");
-let menuBtnElm = document.getElementById("menu_btn");
-let menuContentElm = document.getElementById("menu_content");
+let headerElm = document.querySelector(".header");
+let menuBtnElm = document.querySelector(".menu_btn");
+let menuContentElm = document.querySelector(".menu_content");
 
 let scrollFlag = true;
 
@@ -55,9 +55,9 @@ window.addEventListener("scroll", () => {
     toggleTopBtn();
 });
 
-let linkArticleListElm = document.getElementById('link_article_list');
-let linkPopularArticleElm = document.getElementById('link_popular_article');
-let linkSnsShareElm = document.getElementById('link_sns_share');
+let linkArticleListElm = document.querySelector('.link_article_list');
+let linkPopularArticleElm = document.querySelector('.link_popular_article');
+let linkSnsShareElm = document.querySelector('.link_sns_share');
 
 function clickLink(elm) {
     const targetElm = document.getElementById(elm);
@@ -108,7 +108,7 @@ class Carousel {
     }
 
     prevItem() {
-        console.log("slideCurrentNum: " + this.slideCurrentNum);
+        // console.log("slideCurrentNum: " + this.slideCurrentNum);
         if (this.slideCurrentNum === 0) {
             // slideCurrentNum = totalSlideNum;
             this.carouselBtnPrev.disabled = true;
@@ -145,7 +145,7 @@ class Carousel {
     }
 }
 
-const parentElm = document.getElementById("article_list-carousel");
+const parentElm = document.querySelector(".article_list-carousel");
 const carousel = new Carousel(parentElm);
 carousel.calcWidth();
 carousel.changeSlide();
