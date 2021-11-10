@@ -1,15 +1,15 @@
 export class Carousel {
     constructor(parentElm) {
         this.carouselParentRect = parentElm.getBoundingClientRect();
-        this.carouselListElms = parentElm.querySelectorAll('.carousel_list');
-        this.carouselAreaElm = parentElm.querySelector('.carousel_area');
+        this.carouselListElms = parentElm.querySelectorAll('.article_list-carousel_list');
+        this.carouselAreaElm = parentElm.querySelector('.article_list-carousel_area');
         this.width = this.carouselListElms[0].clientWidth;
         this.length = this.carouselListElms.length;
         this.margin = 30;
         this.slideCurrentNum = 0;
         this.totalSlideNum = this.carouselListElms.length - 1;
-        this.carouselBtnPrev = parentElm.querySelector('.arrow_prev');
-        this.carouselBtnNext = parentElm.querySelector('.arrow_next');
+        this.carouselBtnPrev = parentElm.querySelector('.article_list-arrow_prev_btn');
+        this.carouselBtnNext = parentElm.querySelector('.article_list-arrow_next_btn');
     }
 
     calcWidth() {

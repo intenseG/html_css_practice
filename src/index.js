@@ -2,8 +2,8 @@ import { scrollTop } from './scrollUtil';
 import { Carousel } from './carousel';
 
 let headerElm = document.querySelector(".header");
-let menuBtnElm = document.querySelector(".menu_btn");
-let menuContentElm = document.querySelector(".menu_content");
+let menuBtnElm = document.querySelector(".header-menu_btn");
+let menuContentElm = document.querySelector(".header-menu_content");
 
 function changeHeaderColor() {
     let scrollFlag = true;
@@ -29,9 +29,9 @@ window.addEventListener("scroll", () => {
     changeHeaderColor();
 });
 
-let linkArticleListElm = document.querySelector('.link_article_list');
-let linkPopularArticleElm = document.querySelector('.link_popular_article');
-let linkSnsShareElm = document.querySelector('.link_sns_share');
+let linkArticleListElm = document.querySelector('.header-link_article_list');
+let linkPopularArticleElm = document.querySelector('.header-link_popular_article');
+let linkSnsShareElm = document.querySelector('.header-link_sns_share');
 
 function clickLink(elm) {
     const targetElm = document.getElementById(elm);
