@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ニュースサイト制作練習</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <button class="back_to_topbtn"></button>
+  <div class="header">
+    <img src="./img/logo.png" class="header-logo" alt="囲碁ニュース">
+    <div class="header-menu">
+      <input type="checkbox" id="menu_btn_check">
+      <label for="menu_btn_check" class="header-menu_btn"><span></span></label>
+      <div class="header-menu_content">
+        <ul>
+          <li>
+            <a class="header-link_article_list">記事一覧</a>
+          </li>
+          <li>
+            <a class="header-link_popular_article">人気の記事</a>
+          </li>
+          <li>
+            <a class="header-link_sns_share">共有</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- Header -->
+  <div class="wrapper">
+    <div class="main_visual">
+      <div class="main_visual-frase">
+        囲碁に関する情報やニュースを掲載しています
+      </div>
+      <input type="text" class="main_visual-search_field">
+      <button class="main_visual-search_button">検索</button>
+    </div>
+  </div><!-- MainVisual -->
+  <div class="partition_line"></div>
+  <div id="article_list" class="wrapper">
+    <h2 class="head_line">記事一覧</h2>
+    <div class="article_list-carousel">
+      <ul class="article_list-carousel_area">
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+            <div class="article_list-new_article">new</div>
+          </div>
+          <div class="article_list-title">囲碁の極意1</div>
+        </li>
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+            <div class="article_list-new_article">new</div>
+          </div>
+          <div class="article_list-title">囲碁の極意2</div>
+        </li>
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+          </div>
+          <div class="article_list-title">囲碁の極意3</div>
+        </li>
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+          </div>
+          <div class="article_list-title">囲碁の極意4</div>
+        </li>
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+          </div>
+          <div class="article_list-title">囲碁の極意5</div>
+        </li>
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+          </div>
+          <div class="article_list-title">囲碁の極意6</div>
+        </li>
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+          </div>
+          <div class="article_list-title">囲碁の極意7</div>
+        </li>
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+          </div>
+          <div class="article_list-title">囲碁の極意8</div>
+        </li>
+        <li class="article_list-carousel_list">
+          <div class="article_list-article_item">
+            <div class="article_list-img_box">
+              <img src="./img/article.png" class="article_list-article_img">
+            </div>
+          </div>
+          <div class="article_list-title">囲碁の極意9</div>
+        </li>
+      </ul>
+      <div class="article_list-arrow_wrap">
+        <div class="article_list-arrow_prev">
+          <button class="article_list-arrow_prev_btn" type="button"></button>
+        </div>
+        <div class="article_list-arrow_next">
+          <button class="article_list-arrow_next_btn" type="button"></button>
+        </div>
+      </div>
+    </div>
+    <button class="article_list-carousel_view_all">すべて見る</button>
+  </div><!-- article_list -->
+  <div id="popular_article" class="wrapper">
+    <h2 class="head_line">人気の記事</h2>
+    <div class="popular_article">
+      <div class="popular_article-article_list">
+        <div class="popular_article-article_item">
+          <div class="popular_article-img_box">
+            <img src="./img/article.png" class="popular_article-article_img">
+          </div>
+          <div class="popular_article-title">囲碁の極意1</div>
+        </div>
+      </div>
+      <div class="popular_article-article_column_list">
+        <div class="popular_article-article_item">
+          <div class="popular_article-img_box">
+            <img src="./img/article.png" class="popular_article-article_img">
+          </div>
+          <div class="popular_article-title">囲碁の極意2</div>
+        </div>
+        <div class="popular_article-article_item">
+          <div class="popular_article-img_box">
+            <img src="./img/article.png" class="popular_article-article_img">
+          </div>
+          <div class="popular_article-title">囲碁の極意3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="sns_share" class="wrapper">
+    <div class="sns_share">
+      <div class="sns_share-frase">このページを共有する</div>
+      <div class="sns_share-button_group">
+        <button class="sns_share-sns_button">Twitter</button>
+        <button class="sns_share-sns_button">LINE</button>
+        <button class="sns_share-sns_button">Facebook</button>
+      </div>
+    </div>
+  </div>
+  <div class="partition_line"></div>
+  <div class="wrapper">
+    <div class="bottom_menu">
+      <div class="bottom_menu-article_category">
+        <h2 class="head_line article_category_title">記事カテゴリ一覧</h2>
+        <div class="bottom_menu-category_list">
+          <button class="bottom_menu-category_item">カテゴリ1</button>
+          <button class="bottom_menu-category_item">カテゴリ2</button>
+          <button class="bottom_menu-category_item">カテゴリ3</button>
+          <button class="bottom_menu-category_item">カテゴリ4</button>
+        </div>
+      </div>
+      <div class="bottom_menu-account">
+        <div class="head_line account_title">アカウント</div>
+        <div class="bottom_menu-sns_group">
+          <button class="bottom_menu-official_twitter">Twitter</button>
+          <button class="bottom_menu-official_facebook">Facebook</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="footer">
+      Copyright © 2021 IgoCreative All Rights Reserved.
+    </div>
+  </div>
+  <script src="./bundle.js"></script>
+</body>
+</html>
