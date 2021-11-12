@@ -1,0 +1,60 @@
+.container {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.container .header {
+  width: 100%;
+  margin: 40px 0;
+}
+
+.container .words h5 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.container .words .words-links .words-prefix_link {
+  width: 130px;
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #eeeeee;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.container .words .words-links .words-prefix_link .words-arrow_right {
+  position: relative;
+  left: 25px;
+}
+
+.container .words .words-links .words-prefix_link .words-arrow_right:before {
+  content: ">";
+  font-weight: bold;
+}
+
+.container .words .words-headline {
+  border-bottom: 4px solid #0f0f0f;
+  background-color: #f2f2f2;
+  padding: 15px;
+}
+
+.container .words .words-row {
+  margin-bottom: 20px;
+}
+
+.container .words .words-row .words-col {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .container .words .words-row .words-col {
+    width: 33%;
+  }
+}
+/*# sourceMappingURL=igo_words.css.map */
