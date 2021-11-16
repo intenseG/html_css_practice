@@ -38,21 +38,20 @@ let linkPopularArticleElm = document.querySelector('.header-link_popular_article
 let linkSnsShareElm = document.querySelector('.header-link_sns_share');
 
 function clickLink(elm) {
-    const targetElm = document.getElementById(elm);
+    const targetElm = document.querySelector(elm);
     const rect = targetElm.getBoundingClientRect();
     const elmTop = rect.top + window.pageYOffset - headerElm.scrollHeight;
     document.documentElement.scrollTop = elmTop;
-    console.log(elmTop);
 }
 
 linkArticleListElm.addEventListener("click", function() {
-    clickLink('article_list');
+    clickLink('.article_list');
 });
 linkPopularArticleElm.addEventListener("click", function() {
-    clickLink('popular_article');
+    clickLink('.popular_article');
 });
 linkSnsShareElm.addEventListener("click", function() {
-    clickLink('sns_share');
+    clickLink('.sns_share');
 });
 
 function initCarousel(elmClassName) {
