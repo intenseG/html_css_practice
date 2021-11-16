@@ -249,7 +249,7 @@ $breakpoint_mobile: 420px;
 
     .main_visual-search_button {
       position: absolute;
-      left: 79%;
+      left: calc(50% + 160px + 60px);
       bottom: 42%;
       transform: translate(-50%, -50%);
       /* width: 70px;
