@@ -41,7 +41,7 @@ $breakpoint_mobile: 420px;
   display: none;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: .3s;
 
   &::before {
     content: "";
@@ -54,7 +54,7 @@ $breakpoint_mobile: 420px;
   }
 
   &:hover {
-    transform: scale(1.1);
+    background-color: #006f94;
   }
   
   &.display_on {
@@ -93,7 +93,11 @@ $breakpoint_mobile: 420px;
       z-index: 90;
       background-color: #293f65;
       opacity: 0.8;
+      transition: .3s;
 
+      &:hover {
+        background-color: #006f94;
+      }
       &.change_color {
         opacity: 1;
       }
@@ -165,6 +169,7 @@ $breakpoint_mobile: 420px;
       text-decoration: none;
       padding: 9px 30px 10px 0;
       position: relative;
+      transition: .3s;
     }
     & ul li a::before {
       content: "";
@@ -176,6 +181,9 @@ $breakpoint_mobile: 420px;
       position: absolute;
       right: 11px;
       top: 16px;
+    }
+    & ul li a:hover {
+      background-color: #006f94;
     }
   }
 }
@@ -252,6 +260,11 @@ $breakpoint_mobile: 420px;
       margin: auto;
       // margin-left: 15px;
       border-radius: 7px;
+      transition: .3s;
+
+      &:hover {
+        background-color: #326fda;
+      }
 
       @include mobile {
         margin-top: 10px;
@@ -388,7 +401,7 @@ $breakpoint_mobile: 420px;
           background-color: rgba(113, 135, 245, 0.8);
           border-radius: 50%;
           border: 0;
-          /* transition: .2s; */
+          transition: .3s;
 
           &:focus {
             box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.8);
@@ -422,7 +435,7 @@ $breakpoint_mobile: 420px;
           background-color: rgba(113, 135, 245, 0.8);
           border-radius: 50%;
           border: 0;
-          /* transition: .2s; */
+          transition: .3s;
 
           &:focus {
             box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.8);
@@ -445,6 +458,11 @@ $breakpoint_mobile: 420px;
     cursor: pointer;
     background: transparent;
     border: 0;
+    transition: .3s;
+
+    &:hover {
+      background-color: #dfd6d6;
+    }
   }
 
   /* PopularArticle */
@@ -606,13 +624,10 @@ $breakpoint_mobile: 420px;
         background-color: #2b5eb6;
         color: #ffffff;
         cursor: pointer;
+        transition: .3s;
 
         @include tablet {
-          width: 100px;
-          height: 100px;
           margin-right: 50px;
-          background-color: #2b5eb6;
-          color: #ffffff;
         }
 
         @include mobile {
@@ -620,6 +635,10 @@ $breakpoint_mobile: 420px;
           height: 60px;
           margin-right: 20px;
           font-size: 12px;
+        }
+
+        &:hover {
+          background-color: #3170db;
         }
 
         &:last-child {
@@ -671,9 +690,14 @@ $breakpoint_mobile: 420px;
           margin: 0;
           margin-right: 10px;
           cursor: pointer;
+          transition: .3s;
 
           @include mobile {
             margin-bottom: 5px;
+          }
+
+          &:hover {
+            background-color: #3673dd;
           }
 
           &:last-child {
@@ -722,6 +746,7 @@ $breakpoint_mobile: 420px;
           margin: 0;
           margin-right: 20px;
           cursor: pointer;
+          transition: .3s;
 
           @include tablet {
             width: 120px;
@@ -732,6 +757,10 @@ $breakpoint_mobile: 420px;
           @include mobile {
             margin-bottom: 5px;
             font-size: 20px;
+          }
+
+          &:hover {
+            background-color: #4e8cf7;
           }
         }
 
@@ -745,6 +774,7 @@ $breakpoint_mobile: 420px;
           padding: 0 10px;
           margin: 0;
           cursor: pointer;
+          transition: .3s;
 
           @include tablet {
             width: 120px;
@@ -753,6 +783,10 @@ $breakpoint_mobile: 420px;
 
           @include mobile {
             font-size: 20px;
+          }
+
+          &:hover {
+            background-color: #1e5bc4;
           }
         }
       }

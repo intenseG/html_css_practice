@@ -68,4 +68,3 @@ initCarousel(".article_list-carousel");
 
 //背景画像の自動切り替え開始
 changeImage();
-initCarousel(".article_list-carousel");
