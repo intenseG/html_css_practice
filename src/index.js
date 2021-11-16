@@ -1,10 +1,12 @@
 import { scrollTop } from './scrollUtil';
 import { Carousel } from './carousel';
+import { changeImage } from './changeImage';
 
 let headerElm = document.querySelector(".header");
 let menuBtnElm = document.querySelector(".header-menu_btn");
 let menuContentElm = document.querySelector(".header-menu_content");
 
+//スクロール時にヘッダーの色を変える関数
 function changeHeaderColor() {
     let scrollFlag = true;
     if (!scrollFlag) return;
@@ -24,11 +26,13 @@ function changeHeaderColor() {
     }, 200);
 }
 
+//スクロール時の処理を割り当てる
 window.addEventListener("scroll", () => {
     scrollTop(".back_to_topbtn").init();
     changeHeaderColor();
 });
 
+//ヘッダーメニューのリンクを設定
 let linkArticleListElm = document.querySelector('.header-link_article_list');
 let linkPopularArticleElm = document.querySelector('.header-link_popular_article');
 let linkSnsShareElm = document.querySelector('.header-link_sns_share');
@@ -59,4 +63,9 @@ function initCarousel(elmClassName) {
     carousel.handleListener();
 }
 
+//カルーセルの初期化
+initCarousel(".article_list-carousel");
+
+//背景画像の自動切り替え開始
+changeImage();
 initCarousel(".article_list-carousel");
