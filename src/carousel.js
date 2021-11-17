@@ -10,6 +10,15 @@ export class Carousel {
         this.totalSlideNum = this.carouselListElms.length - 1;
         this.carouselBtnPrev = parentElm.querySelector('.article_list-arrow_prev_btn');
         this.carouselBtnNext = parentElm.querySelector('.article_list-arrow_next_btn');
+
+        //カルーセルの初期化
+        this.init();
+    }
+
+    init() {
+        this.calcWidth();
+        this.changeSlide();
+        this.handleListener();
     }
 
     calcWidth() {
