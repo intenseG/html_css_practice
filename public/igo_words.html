@@ -6,20 +6,24 @@
   <title>ニュースサイト制作練習 | 囲碁用語集</title>
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/igo_words.css">
+  <link rel="stylesheet" href="./css/header.css">
 </head>
 <body>
   <div class="container">
-    <header class="header">
+    <div class="header">
+      <img src="./img/logo.png" class="header-logo" alt="囲碁ニュース">
+    </div>
+    <div class="head_line">
       <h1>囲碁用語集</h1>
-    </header>
+    </div>
     <div class="words">
       <div class="words-links">
         <h5>頭文字から探す</h5>
-        <a class="words-prefix_link" href="#あ行">
+        <a class="words-prefix_link">
           あ行
           <i class="words-arrow_right"></i>
         </a>
-        <a class="words-prefix_link" href="#か行">
+        <a class="words-prefix_link">
           か行
           <i class="words-arrow_right"></i>
         </a>
@@ -196,5 +200,6 @@
       </ul>
     </div>
   </div>
+  <script src="./igo_words/bundle.js"></script>
 </body>
 </html>

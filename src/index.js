@@ -1,70 +1,75 @@
-import { scrollTop } from './scrollUtil';
+import { scrollTop } from './scrollTop';
 import { Carousel } from './carousel';
 import { changeImage } from './changeImage';
 
-let headerElm = document.querySelector(".header");
-let menuBtnElm = document.querySelector(".header-menu_btn");
-let menuContentElm = document.querySelector(".header-menu_content");
+const headerElm = document.querySelector(".header");
+const menuBtnElm = document.querySelector(".header-menu_btn");
+const menuContentElm = document.querySelector(".header-menu_content");
 
 //スクロール時にヘッダーの色を変える関数
 function changeHeaderColor() {
-    let scrollFlag = true;
-    if (!scrollFlag) return;
     if (headerElm.scrollHeight < window.scrollY) {
         headerElm.classList.add("change_color");
         menuBtnElm.classList.add("change_color");
         menuContentElm.classList.add("change_color");
     } else {
-        scrollFlag = false;
         headerElm.classList.remove("change_color");
         menuBtnElm.classList.remove("change_color");
         menuContentElm.classList.remove("change_color");
     }
+}
+
+let scrollFlag = true;
+
+//スクロール時の処理を割り当てる
+window.addEventListener("scroll", () => {
+    if (!scrollFlag) return;
+    scrollFlag = false;
+
+    scrollTop(".back_to_topbtn").init();
+    changeHeaderColor();
 
     setTimeout(() => {
         scrollFlag = true;
     }, 200);
-}
-
-//スクロール時の処理を割り当てる
-window.addEventListener("scroll", () => {
-    scrollTop(".back_to_topbtn").init();
-    changeHeaderColor();
 });
 
 //ヘッダーメニューのリンクを設定
-let linkArticleListElm = document.querySelector('.header-link_article_list');
-let linkPopularArticleElm = document.querySelector('.header-link_popular_article');
-let linkSnsShareElm = document.querySelector('.header-link_sns_share');
+const linkArticleListElm = document.querySelector('.header-link_article_list');
+const linkPopularArticleElm = document.querySelector('.header-link_popular_article');
+const linkSnsShareElm = document.querySelector('.header-link_sns_share');
 
-function clickLink(elm) {
-    const targetElm = document.getElementById(elm);
-    const rect = targetElm.getBoundingClientRect();
+function scrollTo(elm) {
+    const rect = elm.getBoundingClientRect();
     const elmTop = rect.top + window.pageYOffset - headerElm.scrollHeight;
     document.documentElement.scrollTop = elmTop;
-    console.log(elmTop);
 }
 
 linkArticleListElm.addEventListener("click", function() {
-    clickLink('article_list');
+    const targetElm = document.querySelector('.article_list');
+    scrollTo(targetElm);
 });
 linkPopularArticleElm.addEventListener("click", function() {
-    clickLink('popular_article');
+    const targetElm = document.querySelector('.popular_article');
+    scrollTo(targetElm);
 });
 linkSnsShareElm.addEventListener("click", function() {
-    clickLink('sns_share');
+    const targetElm = document.querySelector('.sns_share');
+    scrollTo(targetElm);
 });
 
 function initCarousel(elmClassName) {
     const parentElm = document.querySelector(elmClassName);
     const carousel = new Carousel(parentElm);
-    carousel.calcWidth();
-    carousel.changeSlide();
-    carousel.handleListener();
 }
 
 //カルーセルの初期化
 initCarousel(".article_list-carousel");
 
+const imgs = ["./img/forest.jpeg", "./img/stadium1.jpeg", "./img/stadium2.jpeg"];
+const backgroundImgElm = document.querySelector(".main_visual-background_img");
+
 //背景画像の自動切り替え開始
-changeImage();
+setInterval(() => {
+    changeImage(imgs, backgroundImgElm);    
+}, 5000);
