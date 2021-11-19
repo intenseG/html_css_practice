@@ -74,16 +74,20 @@ $breakpoint_mobile: 420px;
     #menu_btn_check {
       display: none;
 
-      &:checked ~ .header-menu_btn span {
-        background-color: rgba(255, 255, 255, 0);
-      }
-      &:checked ~ .header-menu_btn span::before {
-        bottom: 0;
-        transform: rotate(45deg);
-      }
-      &:checked ~ .header-menu_btn span::after {
-        top: 0;
-        transform: rotate(-45deg);
+      &:checked ~ .header-menu_btn {
+        span {
+          background-color: rgba(255, 255, 255, 0);
+
+          &::before {
+            bottom: 0;
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            top: 0;
+            transform: rotate(-45deg);
+          }
+        }
       }
 
       &:checked ~ .header-menu_content {
